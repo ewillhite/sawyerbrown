@@ -1,0 +1,288 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: 'nexa_boldregular';
+  src: url("../fonts/Nexa_Free_Bold-webfont.eot");
+  src: url("../fonts/Nexa_Free_Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Nexa_Free_Bold-webfont.woff") format("woff"), url("../fonts/Nexa_Free_Bold-webfont.ttf") format("truetype"), url("../fonts/Nexa_Free_Bold-webfont.svg#nexa_boldregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'nexa_lightregular';
+  src: url("../fonts/Nexa_Free_Light-webfont.eot");
+  src: url("../fonts/Nexa_Free_Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Nexa_Free_Light-webfont.woff") format("woff"), url("../fonts/Nexa_Free_Light-webfont.ttf") format("truetype"), url("../fonts/Nexa_Free_Light-webfont.svg#nexa_lightregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Font Usage
+font-family: 'nexa_boldregular', sans-serif;
+font-family: 'nexa_lightregular', sans-serif;
+font-family: 'icomoon';
+*/
+/* ------------------------------------
+ Drupal defaults
+-------------------------------------*/
+.region-aside .block {
+  clear: both;
+  margin-bottom: 20px; }
+
+.view-content ul, .view-content ol {
+  margin: 0;
+  padding: 0; }
+
+.item-list ul li.views-row, .views-row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative; }
+
+/* tabs */
+ul.primary {
+  height: 26px;
+  margin-left: 0;
+  padding-left: 1%; }
+  ul.primary li {
+    display: inline;
+    margin: 0;
+    padding: 0; }
+    ul.primary li a {
+      border-radius: 3px 3px 0 0;
+      font-size: .8em;
+      padding: 7px 7px 5px; }
+
+/* Forms */
+form small, form .description {
+  color: #5f5f5f; }
+
+label, label.required {
+  color: #455f93;
+  font-weight: 500; }
+
+input[type="text"], input[type="password"], input[type="email"] {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  font: 1em 'nexa_lightregular', sans-serif;
+  margin: 10px 0;
+  padding: 10px 34px 10px 10px;
+  /* all */
+  /* firefox 19+ */
+  /* ie */ }
+  input[type="text"]:focus::-webkit-input-placeholder, input[type="password"]:focus::-webkit-input-placeholder, input[type="email"]:focus::-webkit-input-placeholder {
+    color: #ccc; }
+  input[type="text"]:focus::-moz-placeholder, input[type="password"]:focus::-moz-placeholder, input[type="email"]:focus::-moz-placeholder {
+    color: #ccc; }
+  input[type="text"]:focus:-ms-input-placeholder, input[type="password"]:focus:-ms-input-placeholder, input[type="email"]:focus:-ms-input-placeholder {
+    color: #ccc; }
+
+input[type="submit"] {
+  background: #3d3d3d;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font: 1em 'nexa_lightregular', sans-serif;
+  padding: 10px 6px;
+  margin-top: 10px;
+  text-transform: uppercase; }
+  input[type="submit"]:hover {
+    background-color: #505050; }
+
+textarea {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 4px 4px 0 0;
+  min-height: 150px; }
+
+.page input[type="submit"] {
+  background-color: #aaa;
+  color: #fff;
+  display: block;
+  font-family: 'nexa_boldregular', sans-serif;
+  font-weight: 800;
+  padding: 0.1% 1.5%;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: .9em;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  padding: 6px 18px; }
+  .page input[type="submit"]:hover {
+    background-color: #b6b6b6;
+    text-decoration: none; }
+
+/* User Login */
+#user-login div {
+  margin: 15px 0; }
+#user-login label {
+  display: block; }
+
+/* responsive images, videos */
+img, object, video {
+  height: auto; }
+
+/* Overrides for Media module to make fitVids work */
+.media-youtube-outer-wrapper, .media-youtube-preview-wrapper, .media-vimeo-outer-wrapper, .media-vimeo-preview-wrapper {
+  height: auto !important;
+  width: auto !important; }
+
+body {
+  color: #333333;
+  font-family: 'nexa_boldregular', sans-serif;
+  font-size: 100%;
+  line-height: 2em; }
+
+.field-name-body ul li {
+  height: auto;
+  list-style: none;
+  overflow: visible;
+  padding-left: 2%; }
+
+/* Tables */
+td, th {
+  padding: 2%; }
+
+.page p {
+  margin-bottom: 20px; }
+
+/* - Typography Basics - from Gridless http://thatcoolguy.github.com/gridless-boilerplate/ */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1em; }
+
+h1 {
+  font-size: 2em;
+  /* 68px */
+  line-height: 1.1471em;
+  margin: 0 0 0.3824em; }
+
+h2 {
+  font-size: 1.1em;
+  /* 42px */
+  line-height: 1.2381em;
+  margin: 0 0 0.619em; }
+
+h3 {
+  font-size: 1.05em;
+  /* 26px */
+  line-height: 1em;
+  margin: 0 0 1em; }
+
+h4 {
+  font-size: .95em; }
+
+h5 {
+  font-size: .9em; }
+
+.button {
+  background-color: #aaa;
+  color: #fff;
+  display: block;
+  font-family: 'nexa_boldregular', sans-serif;
+  font-weight: 800;
+  padding: 0.1% 1.5%;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: .9em;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s; }
+  .button:hover {
+    background-color: #b6b6b6;
+    text-decoration: none; }
+
+blockquote {
+  clear: both;
+  font-style: italic;
+  position: relative;
+  padding: 20px 39px 21px 30px;
+  box-shadow: 2px 2px 3px #eeeeee;
+  margin: 10px;
+  border-radius: 7px; }
+  blockquote p {
+    display: inline; }
+
+@media screen and (min-width: 768px) {
+  .left-column {
+    clear: right;
+    float: left;
+    margin-right: 2%;
+    width: 49%; }
+
+  .right-column {
+    float: left;
+    width: 49%; } }
+/* ------------------------------------
+ Layout & General
+-------------------------------------*/
+.header-inner, .page-inner, .footer-inner {
+  *zoom: 1;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; }
+  .header-inner:before, .header-inner:after, .page-inner:before, .page-inner:after, .footer-inner:before, .footer-inner:after {
+    content: " ";
+    display: table; }
+  .header-inner:after, .page-inner:after, .footer-inner:after {
+    clear: both; }
+
+body {
+  background: url(../images/blue-bg.jpg) repeat-x scroll 0 0; }
+
+/* ------------------------------------
+ Header
+-------------------------------------*/
+header {
+  background: url(../images/nav-bg.png) repeat-x scroll 0 0;
+  display: block;
+  width: 100%; }
+
+#logo {
+  background: url(../images/sprite.png) no-repeat scroll 0 0;
+  background-position: 0 0;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  float: left;
+  margin: 19px 0 0 20px;
+  padding-top: 479px;
+  position: relative;
+  width: 339px; }
+
+nav {
+  float: right;
+  margin: 5px 20px 0 0;
+  position: relative; }
+  nav li {
+    display: inline-block;
+    margin-left: 5px; }
+  nav a {
+    border-radius: 7px;
+    color: #fff;
+    padding: 7px 13px;
+    text-decoration: none;
+    text-transform: uppercase; }
+    nav a:hover, nav a.active {
+      background-color: #fff;
+      color: #4b7c95; }
+
+.header-inner div {
+  background: url(../images/social-bg.png) no-repeat scroll 0 0; }
+
+/* ------------------------------------
+ Content
+-------------------------------------*/
+/* ------------------------------------
+ Footer
+-------------------------------------*/

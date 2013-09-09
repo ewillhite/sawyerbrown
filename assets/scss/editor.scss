@@ -1,0 +1,7 @@
+/* CKEditor styles */
+@import "bourbon/bourbon";
+@import "grid-settings";
+@import "neat/neat";
+@import "defaults";
+
+@include editorstyles;

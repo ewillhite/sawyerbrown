@@ -1,0 +1,141 @@
+$base: #333;
+$blue: #4b7c95;
+
+@font-face {
+  font-family: 'nexa_boldregular';
+  src: url('../fonts/Nexa_Free_Bold-webfont.eot');
+  src: url('../fonts/Nexa_Free_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Nexa_Free_Bold-webfont.woff') format('woff'),
+       url('../fonts/Nexa_Free_Bold-webfont.ttf') format('truetype'),
+       url('../fonts/Nexa_Free_Bold-webfont.svg#nexa_boldregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'nexa_lightregular';
+    src: url('../fonts/Nexa_Free_Light-webfont.eot');
+    src: url('../fonts/Nexa_Free_Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Nexa_Free_Light-webfont.woff') format('woff'),
+         url('../fonts/Nexa_Free_Light-webfont.ttf') format('truetype'),
+         url('../fonts/Nexa_Free_Light-webfont.svg#nexa_lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('../fonts/icomoon.eot');
+  src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.woff') format('woff'),
+    url('../fonts/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin sprite($pos) {
+  background: url(../images/sprite.png) no-repeat scroll 0 0;
+  background-position: $pos;
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+@mixin btn {
+  background-color: #aaa;
+  color: #fff;
+  display: block;
+  font-family: 'nexa_boldregular', sans-serif;
+  font-weight: 800;
+  padding: 0.1% 1.5%;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: .9em;
+  @include transition (all .3s);
+  &:hover {
+    background-color: tint(#aaa, 15%);
+    text-decoration: none;
+  }
+}
+
+@mixin editorstyles {
+
+body {
+  color: $base;
+  font-family: 'nexa_boldregular', sans-serif;
+  font-size: 100%;
+  line-height: 2em;
+}
+.field-name-body ul li {
+  height: auto;
+  list-style:none;
+  overflow: visible;
+  padding-left:2%;
+}
+/* Tables */
+td, th {
+  padding: 2%;
+}
+.page, .page p {
+}
+.page p {
+  margin-bottom: 20px;
+}
+/* - Typography Basics - from Gridless http://thatcoolguy.github.com/gridless-boilerplate/ */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1em;
+}
+h1 {
+  font-size: 2em; /* 68px */
+  line-height: 1.1471em;
+  margin: 0 0 0.3824em;
+}
+h2 {
+  font-size: 1.1em; /* 42px */
+  line-height: 1.2381em;
+  margin: 0 0 0.619em;
+}
+h3 {
+  font-size: 1.05em; /* 26px */
+  line-height: 1em;
+  margin: 0 0 1em;
+}
+h4 {
+  font-size: .95em;
+}
+h5 {
+  font-size: .9em;
+}
+a {
+  // color: $red;
+}
+.button {
+  @include btn;
+}
+blockquote {
+  clear: both;
+  font-style: italic;
+  position: relative;
+  padding: 20px 39px 21px 30px;
+  box-shadow: 2px 2px 3px #eeeeee;
+  margin: 10px;
+  border-radius: 7px;
+  p {
+    display: inline;
+  }
+}
+@include media($tablet) {
+  .left-column {
+    clear: right;
+    float: left;
+    margin-right: 2%;
+    width: 49%;
+  }
+  .right-column {
+    float: left;
+    width: 49%;
+  }
+}
+
+}

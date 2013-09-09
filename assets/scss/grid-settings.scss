@@ -1,0 +1,15 @@
+@import "neat/neat-helpers"; // or "neat-helpers" when in Rails
+
+// Change the grid settings
+$column: 88px;
+$gutter: 30px;
+$grid-columns: 10;
+$max-width: 1180px;
+
+// Define your breakpoints
+// Mobile First
+$tablet: new-breakpoint(min-width 768px 16);
+$desktop: new-breakpoint(min-width 1024px 16);
+
+// Mobile Only
+$mobile: new-breakpoint(max-width 768px 8);
