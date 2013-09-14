@@ -12,7 +12,7 @@ font-family: 'icomoon';
 /* ------------------------------------
  Drupal defaults
 -------------------------------------*/
-.region-aside .block {
+#sidebar .block {
     clear: both;
     margin-bottom: 20px;
 }
@@ -56,7 +56,7 @@ input[type="text"], input[type="password"], input[type="email"] {
   border-radius: 5px;
   font: 1em 'nexa_lightregular', sans-serif;
   margin: 10px 0;
-  padding: 10px 34px 10px 10px;
+  padding: 10px;
   /* all */
   &:focus::-webkit-input-placeholder { color:#ccc; }
   &:focus::-moz-placeholder { color:#ccc; } /* firefox 19+ */
@@ -82,7 +82,7 @@ textarea {
   border-radius: 4px 4px 0 0;
   min-height: 150px;
 }
-.page input[type="submit"] {
+#page input[type="submit"] {
   @include btn;
   padding: 6px 18px;
 }
@@ -108,59 +108,198 @@ img, object, video {
 /* ------------------------------------
  Layout & General
 -------------------------------------*/
-.header-inner, .page-inner, .footer-inner {
+#header-inner, #page-inner, #footer-inner {
   @include outer-container;
   position: relative;
 }
 body {
-  background: url(../images/blue-bg.jpg) repeat-x scroll 0 0;
+  background: url(../images/blue-bg.jpg);
 }
-
+.back-link {
+  @include btn;
+  background-color:$blue;
+  float: left;
+  margin-bottom:16px;
+  &:before {
+    content: "«";
+    padding-right:6px;
+  }
+}
 /* ------------------------------------
  Header
 -------------------------------------*/
-header {
+header, footer {
   background:url(../images/nav-bg.png) repeat-x scroll 0 0;
   display: block;
   width: 100%;
-}
-#logo {
-  @include sprite(0 0);
-  float: left;
-  margin: 19px 0 0 20px;
-  padding-top: 479px;
-  position: relative;
-  width: 339px;
-}
-nav {
-  float: right;
-  margin: 5px 20px 0 0;
-  position: relative;
-  li {
-    display: inline-block;
-    margin-left: 5px;
-  }
-  a {
-    border-radius: 7px;
-    color: #fff;
-    padding: 7px 13px;
-    text-decoration: none;
-    text-transform: uppercase;
-    &:hover, &.active {
-      background-color:#fff;
-      color: $blue;
+  nav {
+    float: right;
+    margin-top: 70px;
+    position: relative;
+    li {
+      display: inline-block;
+      margin-left: 5px;
+    }
+    a {
+      border-radius: 7px;
+      color: #fff;
+      font-size: 1.3em;
+      padding: 7px 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+      &:hover, &.active {
+        background-color:#fff;
+        color: $blue;
+      }
     }
   }
 }
-.header-inner div {
-  background: url(../images/social-bg.png) no-repeat scroll 0 0;
+#logo, #footer-logo {
+  @include sprite(0 -479px);
+  float: left;
+  margin: 10px 0 0 20px;
+  padding-top: 115px;
+  position: relative;
+  width: 268px;
+}
+#header-inner, #footer-inner {
+    > div {
+    background: url(../images/social-bg.png) no-repeat scroll 0 -11px;
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 469px;
+    ul {
+      padding: 0;
+      float: left;
+      margin-left: 15px;
+      margin-right: 20px;
+    }
+    li {
+      display: inline-block;
+      list-style: none;
+      margin-right: 7px;
+    }
+    a {
+      background-color: #fff;
+      border-radius: 25px;
+      color: $blue;
+      font: 19px 'icomoon';
+      padding: 8px;
+      text-decoration: none;
+    }
+    input[type="text"] {
+      margin-right: 7px;
+      width: 185px;
+    }
+  }
 }
 
 /* ------------------------------------
  Content
 -------------------------------------*/
-
+#page-inner {
+  background: url(../images/side-bg.png) repeat-y scroll 0 0;
+  padding-bottom: 60px;
+}
+#main-content {
+  padding:2%;
+}
+#main-wrap {
+  @include span-columns(6.7);
+  background-color:#fff;
+  border-radius: 10px;
+  box-shadow: 3px 3px 7px #aaa;
+  margin-top: 40px;
+}
+#sidebar {
+  height: 100%;
+  @include span-columns(3);
+}
 
 /* ------------------------------------
  Footer
 -------------------------------------*/
+footer {
+  background:url(../images/footer-bg.png) repeat-x scroll 0 0;
+  height: 286px;
+  margin-top: -11px;
+  position: relative;
+  nav {
+    margin: 0;
+    ul {
+      padding:0;
+    }
+    li {
+      display: block;
+      margin: 0 0 0;
+    }
+    a {
+      font-size: 1.1em;
+      display: block;
+      line-height: 1em;
+      padding:5px 10px;
+      width: 200px;
+    }
+  }
+}
+#footer-inner {
+  padding:2% 0 0;
+  > * {
+    float: left;
+    margin-right: 2%;
+  }
+  h3 {
+    color: #335769;
+    text-align: center;
+  }
+  > div {
+    background: none;
+    float: right;
+    position: static;
+    width: auto;
+    input {
+      display: none; /* remove */
+    }
+    li {
+      margin: 0 8px 0 0;
+    }
+    a {
+      padding: 11px;
+      font-size: 20px;
+    }
+  }
+  p {
+    color: #fff;
+    float: right;
+    margin: 0 10% 0 0;
+    text-transform: uppercase;
+    font-size: .95em;
+    a {
+      @include sprite(-348px -440px);
+      display: inline-block;
+      padding-top: 30px;
+      width: 31px;
+      position: relative;
+      top: 8px;
+      left: 1px;
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+}
+#footer-logo {
+  background-position: -349px 0;
+  margin: 20px 70px 0 0;
+  padding-top: 216px;
+  width: 220px;
+}
+#knee-deep {
+  margin: 26px 0 15px;
+  span {
+    @include sprite(-270px -483px);
+    padding-top: 127px;
+    width: 336px;
+  }
+}

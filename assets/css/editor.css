@@ -41,36 +41,50 @@ body {
 td, th {
   padding: 2%; }
 
-.page p {
+#page, #page p {
+  font-size: 1.1em; }
+
+#page p {
   margin-bottom: 20px; }
 
 /* - Typography Basics - from Gridless http://thatcoolguy.github.com/gridless-boilerplate/ */
 h1, h2, h3, h4, h5, h6 {
-  font-size: 1em; }
+  color: #666;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0 0 .5em; }
 
 h1 {
+  background: url(../images/h1-bg.jpg) no-repeat scroll left bottom #5e8599;
+  border-radius: 7px 7px 0 0;
+  color: #fff;
   font-size: 2em;
   /* 68px */
   line-height: 1.1471em;
-  margin: 0 0 0.3824em; }
+  margin: 0 0 0.3824em;
+  padding: 2%; }
 
 h2 {
-  font-size: 1.1em;
-  /* 42px */
+  font-size: 1.3em;
   line-height: 1.2381em;
-  margin: 0 0 0.619em; }
+  margin: 0 0 0.919em;
+  text-transform: uppercase; }
 
 h3 {
-  font-size: 1.05em;
+  font-size: 1.2em;
   /* 26px */
   line-height: 1em;
-  margin: 0 0 1em; }
+  margin: 0 0 1em;
+  text-transform: uppercase; }
 
 h4 {
-  font-size: .95em; }
+  font-size: 1.15em; }
 
 h5 {
-  font-size: .9em; }
+  font-size: 1.1em; }
+
+a {
+  text-decoration: none; }
 
 .button {
   background-color: #aaa;
@@ -99,14 +113,3 @@ blockquote {
   border-radius: 7px; }
   blockquote p {
     display: inline; }
-
-@media screen and (min-width: 768px) {
-  .left-column {
-    clear: right;
-    float: left;
-    margin-right: 2%;
-    width: 49%; }
-
-  .right-column {
-    float: left;
-    width: 49%; } }

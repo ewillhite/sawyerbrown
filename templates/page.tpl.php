@@ -11,59 +11,58 @@
 <?php print $mothership_poorthemers_helper; ?>
 
 <header role="banner">
-  <div class="header-inner">
+  <div id="header-inner">
     <a id="logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">Sawyer Brown</a>
     <?php print render($page['header']); ?>
-    <?php if ($is_front): ?><span class="band"></span><?php endif; ?>
+    <?php if ($is_front): ?><span id="band"></span><?php endif; ?>
   </div><!--header-inner-->
 </header>
 
-<div class="page">
-  <div class="page-inner">
-    <div role="main" id="main-content">
+<div id="page">
+  <div id="page-inner">
+    <?php if (!$is_front): ?><div id="main-wrap"><?php endif; ?>
       <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1><?php print $title; ?></h1>
-      <?php endif; ?>
+        <?php if ($title): ?>
+          <h1><?php print $title; ?></h1>
+        <?php endif; ?>
       <?php print render($title_suffix); ?>
+      <div role="main" id="main-content">
 
-      <?php print $breadcrumb; ?>
+        <?php if ($action_links): ?>
+          <ul class="action-links"><?php print render($action_links); ?></ul>
+        <?php endif; ?>
 
-      <?php if ($action_links): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
+        <?php if (isset($tabs['#primary'][0]) || isset($tabs['#secondary'][0])): ?>
+          <nav class="tabs"><?php print render($tabs); ?></nav>
+        <?php endif; ?>
 
-      <?php if (isset($tabs['#primary'][0]) || isset($tabs['#secondary'][0])): ?>
-        <nav class="tabs"><?php print render($tabs); ?></nav>
-      <?php endif; ?>
-
-      <?php if($page['highlighted'] OR $messages){ ?>
-        <div class="drupal-messages">
-        <?php print render($page['highlighted']); ?>
-        <?php print $messages; ?>
-        </div>
-      <?php } ?>
+        <?php if($page['highlighted'] OR $messages){ ?>
+          <div class="drupal-messages">
+          <?php print render($page['highlighted']); ?>
+          <?php print $messages; ?>
+          </div>
+        <?php } ?>
 
 
-      <?php print render($page['content_pre']); ?>
+        <?php print render($page['content_pre']); ?>
 
-      <?php print render($page['content']); ?>
+        <?php print render($page['content']); ?>
 
-      <?php print render($page['content_post']); ?>
+        <?php print render($page['content_post']); ?>
 
-    </div><!-- /main-->
+      </div><!-- /main-->
+    <?php if (!$is_front): ?></div><!--main-wrap--><?php endif; ?>
 
-    <?php if ($page['sidebar']): ?>
-      <div class="sidebar">
-        <?php print render($page['sidebar']); ?>
-      </div>
-    <?php endif; ?>
-  </div>
+    <div id="sidebar">
+      <?php print render($page['sidebar']); ?>
+    </div>
+  </div><!--page-inner-->
 </div><!-- /page-->
 
 <footer role="contentinfo">
-  <div class="footer-inner">
+  <div id="footer-inner">
     <?php print render($page['footer']); ?>
+    <p>All Material &copy;<?php print date('Y'); ?> Sawyer Brown | Powered by <a href="http://mcninteractive.com" target="_blank">MCN</a></p>
   </div>
 </footer>
 

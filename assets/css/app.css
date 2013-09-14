@@ -32,7 +32,7 @@ font-family: 'icomoon';
 /* ------------------------------------
  Drupal defaults
 -------------------------------------*/
-.region-aside .block {
+#sidebar .block {
   clear: both;
   margin-bottom: 20px; }
 
@@ -74,7 +74,7 @@ input[type="text"], input[type="password"], input[type="email"] {
   border-radius: 5px;
   font: 1em 'nexa_lightregular', sans-serif;
   margin: 10px 0;
-  padding: 10px 34px 10px 10px;
+  padding: 10px;
   /* all */
   /* firefox 19+ */
   /* ie */ }
@@ -104,7 +104,7 @@ textarea {
   border-radius: 4px 4px 0 0;
   min-height: 150px; }
 
-.page input[type="submit"] {
+#page input[type="submit"] {
   background-color: #aaa;
   color: #fff;
   display: block;
@@ -118,7 +118,7 @@ textarea {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
   padding: 6px 18px; }
-  .page input[type="submit"]:hover {
+  #page input[type="submit"]:hover {
     background-color: #b6b6b6;
     text-decoration: none; }
 
@@ -153,36 +153,50 @@ body {
 td, th {
   padding: 2%; }
 
-.page p {
+#page, #page p {
+  font-size: 1.1em; }
+
+#page p {
   margin-bottom: 20px; }
 
 /* - Typography Basics - from Gridless http://thatcoolguy.github.com/gridless-boilerplate/ */
 h1, h2, h3, h4, h5, h6 {
-  font-size: 1em; }
+  color: #666;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0 0 .5em; }
 
 h1 {
+  background: url(../images/h1-bg.jpg) no-repeat scroll left bottom #5e8599;
+  border-radius: 7px 7px 0 0;
+  color: #fff;
   font-size: 2em;
   /* 68px */
   line-height: 1.1471em;
-  margin: 0 0 0.3824em; }
+  margin: 0 0 0.3824em;
+  padding: 2%; }
 
 h2 {
-  font-size: 1.1em;
-  /* 42px */
+  font-size: 1.3em;
   line-height: 1.2381em;
-  margin: 0 0 0.619em; }
+  margin: 0 0 0.919em;
+  text-transform: uppercase; }
 
 h3 {
-  font-size: 1.05em;
+  font-size: 1.2em;
   /* 26px */
   line-height: 1em;
-  margin: 0 0 1em; }
+  margin: 0 0 1em;
+  text-transform: uppercase; }
 
 h4 {
-  font-size: .95em; }
+  font-size: 1.15em; }
 
 h5 {
-  font-size: .9em; }
+  font-size: 1.1em; }
+
+a {
+  text-decoration: none; }
 
 .button {
   background-color: #aaa;
@@ -212,77 +226,218 @@ blockquote {
   blockquote p {
     display: inline; }
 
-@media screen and (min-width: 768px) {
-  .left-column {
-    clear: right;
-    float: left;
-    margin-right: 2%;
-    width: 49%; }
-
-  .right-column {
-    float: left;
-    width: 49%; } }
 /* ------------------------------------
  Layout & General
 -------------------------------------*/
-.header-inner, .page-inner, .footer-inner {
+#header-inner, #page-inner, #footer-inner {
   *zoom: 1;
   max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
   position: relative; }
-  .header-inner:before, .header-inner:after, .page-inner:before, .page-inner:after, .footer-inner:before, .footer-inner:after {
+  #header-inner:before, #header-inner:after, #page-inner:before, #page-inner:after, #footer-inner:before, #footer-inner:after {
     content: " ";
     display: table; }
-  .header-inner:after, .page-inner:after, .footer-inner:after {
+  #header-inner:after, #page-inner:after, #footer-inner:after {
     clear: both; }
 
 body {
-  background: url(../images/blue-bg.jpg) repeat-x scroll 0 0; }
+  background: url(../images/blue-bg.jpg); }
+
+.back-link {
+  background-color: #aaa;
+  color: #fff;
+  display: block;
+  font-family: 'nexa_boldregular', sans-serif;
+  font-weight: 800;
+  padding: 0.1% 1.5%;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: .9em;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: #4b7c95;
+  float: left;
+  margin-bottom: 16px; }
+  .back-link:hover {
+    background-color: #b6b6b6;
+    text-decoration: none; }
+  .back-link:before {
+    content: "«";
+    padding-right: 6px; }
 
 /* ------------------------------------
  Header
 -------------------------------------*/
-header {
+header, footer {
   background: url(../images/nav-bg.png) repeat-x scroll 0 0;
   display: block;
   width: 100%; }
+  header nav, footer nav {
+    float: right;
+    margin-top: 70px;
+    position: relative; }
+    header nav li, footer nav li {
+      display: inline-block;
+      margin-left: 5px; }
+    header nav a, footer nav a {
+      border-radius: 7px;
+      color: #fff;
+      font-size: 1.3em;
+      padding: 7px 10px;
+      text-decoration: none;
+      text-transform: uppercase; }
+      header nav a:hover, header nav a.active, footer nav a:hover, footer nav a.active {
+        background-color: #fff;
+        color: #4b7c95; }
 
-#logo {
+#logo, #footer-logo {
   background: url(../images/sprite.png) no-repeat scroll 0 0;
-  background-position: 0 0;
+  background-position: 0 -479px;
   display: block;
   height: 0;
   overflow: hidden;
   float: left;
-  margin: 19px 0 0 20px;
-  padding-top: 479px;
+  margin: 10px 0 0 20px;
+  padding-top: 115px;
   position: relative;
-  width: 339px; }
+  width: 268px; }
 
-nav {
-  float: right;
-  margin: 5px 20px 0 0;
-  position: relative; }
-  nav li {
+#header-inner > div, #footer-inner > div {
+  background: url(../images/social-bg.png) no-repeat scroll 0 -11px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 469px; }
+  #header-inner > div ul, #footer-inner > div ul {
+    padding: 0;
+    float: left;
+    margin-left: 15px;
+    margin-right: 20px; }
+  #header-inner > div li, #footer-inner > div li {
     display: inline-block;
-    margin-left: 5px; }
-  nav a {
-    border-radius: 7px;
-    color: #fff;
-    padding: 7px 13px;
-    text-decoration: none;
-    text-transform: uppercase; }
-    nav a:hover, nav a.active {
-      background-color: #fff;
-      color: #4b7c95; }
-
-.header-inner div {
-  background: url(../images/social-bg.png) no-repeat scroll 0 0; }
+    list-style: none;
+    margin-right: 7px; }
+  #header-inner > div a, #footer-inner > div a {
+    background-color: #fff;
+    border-radius: 25px;
+    color: #4b7c95;
+    font: 19px 'icomoon';
+    padding: 8px;
+    text-decoration: none; }
+  #header-inner > div input[type="text"], #footer-inner > div input[type="text"] {
+    margin-right: 7px;
+    width: 185px; }
 
 /* ------------------------------------
  Content
 -------------------------------------*/
+#page-inner {
+  background: url(../images/side-bg.png) repeat-y scroll 0 0;
+  padding-bottom: 60px; }
+
+#main-content {
+  padding: 2%; }
+
+#main-wrap {
+  display: block;
+  float: left;
+  margin-right: 2.6087%;
+  width: 66.13913%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 3px 3px 7px #aaa;
+  margin-top: 40px; }
+  #main-wrap:last-child {
+    margin-right: 0; }
+
+#sidebar {
+  height: 100%;
+  display: block;
+  float: left;
+  margin-right: 2.6087%;
+  width: 28.17391%; }
+  #sidebar:last-child {
+    margin-right: 0; }
+
 /* ------------------------------------
  Footer
 -------------------------------------*/
+footer {
+  background: url(../images/footer-bg.png) repeat-x scroll 0 0;
+  height: 286px;
+  margin-top: -11px;
+  position: relative; }
+  footer nav {
+    margin: 0; }
+    footer nav ul {
+      padding: 0; }
+    footer nav li {
+      display: block;
+      margin: 0 0 0; }
+    footer nav a {
+      font-size: 1.1em;
+      display: block;
+      line-height: 1em;
+      padding: 5px 10px;
+      width: 200px; }
+
+#footer-inner {
+  padding: 2% 0 0; }
+  #footer-inner > * {
+    float: left;
+    margin-right: 2%; }
+  #footer-inner h3 {
+    color: #335769;
+    text-align: center; }
+  #footer-inner > div {
+    background: none;
+    float: right;
+    position: static;
+    width: auto; }
+    #footer-inner > div input {
+      display: none;
+      /* remove */ }
+    #footer-inner > div li {
+      margin: 0 8px 0 0; }
+    #footer-inner > div a {
+      padding: 11px;
+      font-size: 20px; }
+  #footer-inner p {
+    color: #fff;
+    float: right;
+    margin: 0 10% 0 0;
+    text-transform: uppercase;
+    font-size: .95em; }
+    #footer-inner p a {
+      background: url(../images/sprite.png) no-repeat scroll 0 0;
+      background-position: -348px -440px;
+      display: block;
+      height: 0;
+      overflow: hidden;
+      display: inline-block;
+      padding-top: 30px;
+      width: 31px;
+      position: relative;
+      top: 8px;
+      left: 1px; }
+      #footer-inner p a:hover {
+        opacity: .8; }
+
+#footer-logo {
+  background-position: -349px 0;
+  margin: 20px 70px 0 0;
+  padding-top: 216px;
+  width: 220px; }
+
+#knee-deep {
+  margin: 26px 0 15px; }
+  #knee-deep span {
+    background: url(../images/sprite.png) no-repeat scroll 0 0;
+    background-position: -270px -483px;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    padding-top: 127px;
+    width: 336px; }

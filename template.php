@@ -18,13 +18,6 @@ function sawyerbrown_preprocess_page(&$vars,$hook) {
 function sawyerbrown_process_html(&$vars) {
   $vars['head_scripts'] = drupal_get_js('head_scripts');
 }
-
-/**
- * Implements hook_process_html().
- */
-function THEMENAME_process_html(&$vars) {
-  $vars['head_scripts'] = drupal_get_js('head_scripts');
-}
 /*
 function sawyerbrown_preprocess_region(&$vars,$hook) {
   //  kpr($vars['content']);
