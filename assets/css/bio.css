@@ -1,0 +1,92 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: 'nexa_boldregular';
+  src: url("../fonts/Nexa_Free_Bold-webfont.eot");
+  src: url("../fonts/Nexa_Free_Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Nexa_Free_Bold-webfont.woff") format("woff"), url("../fonts/Nexa_Free_Bold-webfont.ttf") format("truetype"), url("../fonts/Nexa_Free_Bold-webfont.svg#nexa_boldregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'nexa_lightregular';
+  src: url("../fonts/Nexa_Free_Light-webfont.eot");
+  src: url("../fonts/Nexa_Free_Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Nexa_Free_Light-webfont.woff") format("woff"), url("../fonts/Nexa_Free_Light-webfont.ttf") format("truetype"), url("../fonts/Nexa_Free_Light-webfont.svg#nexa_lightregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Font Usage
+font-family: 'nexa_boldregular', sans-serif;
+font-family: 'nexa_lightregular', sans-serif;
+font-family: 'icomoon';
+*/
+#header-inner {
+  background: url(../images/band-lg.png) no-repeat scroll center bottom;
+  height: 560px; }
+
+#page-inner {
+  background: none; }
+
+#main-wrap {
+  display: block;
+  float: left;
+  margin-right: 2.6087%;
+  width: 100%;
+  background-color: transparent;
+  border-radius: none;
+  box-shadow: none;
+  margin-top: 0; }
+  #main-wrap:last-child {
+    margin-right: 0; }
+
+#main-content {
+  padding: 6% 0; }
+
+#main-image {
+  float: left;
+  margin-right: 2%;
+  position: relative; }
+  #main-image img {
+    display: block; }
+  #main-image h2 {
+    background: url(../images/footer-bg.png) no-repeat scroll 0 0;
+    bottom: 0;
+    color: #fff;
+    font: 3.7em 'nexa_lightregular', sans-serif;
+    left: 0;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 9% 0 5%;
+    position: absolute;
+    text-align: center;
+    width: 100%; }
+    #main-image h2 span {
+      border-bottom: 4px solid #fff;
+      border-top: 4px solid #fff;
+      display: block;
+      margin: 0 auto;
+      width: 90%; }
+
+h1 {
+  background: none;
+  color: #4b7c95;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: -392px;
+  width: 100%; }
+
+#page {
+  background: url(../images/gray-bg2.png) repeat-x scroll 0 0;
+  margin-top: -27px;
+  position: relative; }

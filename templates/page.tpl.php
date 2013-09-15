@@ -53,9 +53,11 @@
       </div><!-- /main-->
     <?php if (!$is_front): ?></div><!--main-wrap--><?php endif; ?>
 
-    <div id="sidebar">
-      <?php print render($page['sidebar']); ?>
-    </div>
+    <?php if ($page['sidebar']): ?>
+      <div id="sidebar">
+        <?php print render($page['sidebar']); ?>
+      </div>
+    <?php endif; ?>
   </div><!--page-inner-->
 </div><!-- /page-->
 

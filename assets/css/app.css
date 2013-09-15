@@ -112,6 +112,7 @@ textarea {
   font-weight: 800;
   padding: 0.1% 1.5%;
   border-radius: 5px;
+  text-align: center;
   text-transform: uppercase;
   font-size: .9em;
   -webkit-transition: all 0.3s;
@@ -137,6 +138,16 @@ img, object, video {
   height: auto !important;
   width: auto !important; }
 
+.views-field-title h2 {
+  margin-bottom: 5px; }
+.views-field-title a {
+  color: #000; }
+  .views-field-title a:hover {
+    color: #666666; }
+
+.views-field-body p {
+  margin-top: 0; }
+
 body {
   color: #333333;
   font-family: 'nexa_boldregular', sans-serif;
@@ -161,7 +172,7 @@ td, th {
 
 /* - Typography Basics - from Gridless http://thatcoolguy.github.com/gridless-boilerplate/ */
 h1, h2, h3, h4, h5, h6 {
-  color: #666;
+  color: #666666;
   font-size: 1em;
   font-weight: normal;
   margin: 0 0 .5em; }
@@ -206,6 +217,7 @@ a {
   font-weight: 800;
   padding: 0.1% 1.5%;
   border-radius: 5px;
+  text-align: center;
   text-transform: uppercase;
   font-size: .9em;
   -webkit-transition: all 0.3s;
@@ -252,6 +264,7 @@ body {
   font-weight: 800;
   padding: 0.1% 1.5%;
   border-radius: 5px;
+  text-align: center;
   text-transform: uppercase;
   font-size: .9em;
   -webkit-transition: all 0.3s;
@@ -353,13 +366,122 @@ header, footer {
     margin-right: 0; }
 
 #sidebar {
-  height: 100%;
   display: block;
   float: left;
   margin-right: 2.6087%;
-  width: 28.17391%; }
+  width: 28.17391%;
+  height: 100%;
+  margin-top: 40px; }
   #sidebar:last-child {
     margin-right: 0; }
+
+/* News */
+.page-news h1 {
+  display: none; }
+.page-news #main-wrap {
+  background-color: transparent;
+  box-shadow: none; }
+.page-news #main-content {
+  padding: 0; }
+  .page-news #main-content ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .page-news #main-content li {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px #aaa;
+    margin-bottom: 4%; }
+  .page-news #main-content .views-field-created h3 {
+    background: url(../images/h1-bg.jpg) no-repeat scroll left bottom #5e8599;
+    border-radius: 7px 7px 0 0;
+    color: #fff;
+    font-size: 1.7em;
+    /* 68px */
+    line-height: 1.1471em;
+    margin: 0 0 0.3824em;
+    padding: 2%; }
+  .page-news #main-content .views-field-body {
+    padding: 0 2% 2%; }
+    .page-news #main-content .views-field-body h2 a {
+      border-bottom: 3px solid #dbe5ea;
+      color: #666;
+      display: block;
+      font-size: 1.1em;
+      padding-bottom: 10px; }
+      .page-news #main-content .views-field-body h2 a:hover {
+        color: #7f7f7f; }
+
+/* Tour */
+.page-events h1 {
+  background: none;
+  color: #4b7c95;
+  font-size: 1.7em;
+  margin-bottom: 10px;
+  text-transform: uppercase; }
+  .page-events h1:before {
+    color: #000;
+    content: "b";
+    font: .8em "icomoon";
+    margin-right: 1%;
+    text-transform: lowercase; }
+.page-events #main-content {
+  padding-top: 0; }
+  .page-events #main-content ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .page-events #main-content li {
+    border-bottom: 3px solid #dbe5ea;
+    overflow: hidden;
+    padding-bottom: 15px;
+    margin-bottom: 20px; }
+  .page-events #main-content p {
+    margin: 0; }
+.page-events .views-field-field-date-2 {
+  background-color: #4b7c95;
+  border-radius: 7px;
+  color: #000;
+  float: left;
+  margin-right: 3%;
+  padding: 2% 1% 1.5%; }
+  .page-events .views-field-field-date-2 span {
+    display: block;
+    font-size: 1.4em;
+    line-height: .6em;
+    text-align: center;
+    text-transform: uppercase; }
+  .page-events .views-field-field-date-2 .day {
+    color: #fff;
+    font: 47px 'nexa_lightregular', sans-serif; }
+.page-events .views-field-title, .page-events .views-field-body {
+  float: left;
+  width: 54%; }
+.page-events .views-field-body {
+  color: #4b7c95;
+  line-height: 1.7em; }
+.page-events .views-field-field-ticket-link {
+  float: right;
+  width: 25%; }
+.page-events .buy-link {
+  background-color: #aaa;
+  color: #fff;
+  display: block;
+  font-family: 'nexa_boldregular', sans-serif;
+  font-weight: 800;
+  padding: 0.1% 1.5%;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: .9em;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: #000;
+  color: #fff; }
+  .page-events .buy-link:hover {
+    background-color: #b6b6b6;
+    text-decoration: none; }
 
 /* ------------------------------------
  Footer

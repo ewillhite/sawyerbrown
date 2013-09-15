@@ -1,5 +1,6 @@
 $base: #333;
 $blue: #4b7c95;
+$gray:#666;
 
 @font-face {
   font-family: 'nexa_boldregular';
@@ -50,6 +51,7 @@ $blue: #4b7c95;
   font-weight: 800;
   padding: 0.1% 1.5%;
   border-radius: 5px;
+  text-align: center;
   text-transform: uppercase;
   font-size: .9em;
   @include transition (all .3s);
@@ -85,7 +87,7 @@ td, th {
 }
 /* - Typography Basics - from Gridless http://thatcoolguy.github.com/gridless-boilerplate/ */
 h1, h2, h3, h4, h5, h6 {
-  color: #666;
+  color: $gray;
   font-size: 1em;
   font-weight: normal;
   margin: 0 0 .5em;

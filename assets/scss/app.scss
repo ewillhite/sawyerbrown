@@ -104,6 +104,20 @@ img, object, video {
     height: auto !important;
     width: auto !important;
 }
+.views-field-title {
+  h2 {
+    margin-bottom: 5px;
+  }
+  a {
+    color: #000;
+    &:hover {
+      color: $gray;
+    }
+  }
+}
+.views-field-body p {
+  margin-top: 0;
+}
 @include editorstyles;
 /* ------------------------------------
  Layout & General
@@ -213,10 +227,127 @@ header, footer {
   margin-top: 40px;
 }
 #sidebar {
-  height: 100%;
   @include span-columns(3);
+  height: 100%;
+  margin-top: 40px;
 }
 
+/* News */
+.page-news {
+  h1 {
+    display: none;
+  }
+  #main-wrap {
+    background-color:transparent;
+    box-shadow:none;
+  }
+  #main-content {
+    padding:0;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 3px 3px 7px #aaa;
+      margin-bottom: 4%;
+    }
+    .views-field-created h3 {
+      background: url(../images/h1-bg.jpg) no-repeat scroll left bottom #5e8599;
+      border-radius:7px 7px 0 0;
+      color: #fff;
+      font-size: 1.7em; /* 68px */
+      line-height: 1.1471em;
+      margin: 0 0 0.3824em;
+      padding: 2%;
+    }
+    .views-field-body {
+      padding: 0 2% 2%;
+      h2 a {
+        border-bottom: 3px solid #dbe5ea;
+        color: #666;
+        display: block;
+        font-size: 1.1em;
+        padding-bottom: 10px;
+        &:hover {
+          color: #7f7f7f;
+        }
+      }
+    }
+  }
+}
+/* Tour */
+.page-events {
+  h1 {
+    background: none;
+    color: #4b7c95;
+    font-size: 1.7em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    &:before {
+      color: #000;
+      content: "b";
+      font: .8em "icomoon";
+      margin-right: 1%;
+      text-transform: lowercase;
+    }
+  }
+  #main-content {
+    padding-top: 0;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      border-bottom: 3px solid #dbe5ea;
+      overflow: hidden;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  .views-field-field-date-2 {
+    background-color: #4b7c95;
+    border-radius: 7px;
+    color: #000;
+    float: left;
+    margin-right: 3%;
+    padding: 2% 1% 1.5%;
+    span {
+      display: block;
+      font-size: 1.4em;
+      line-height: .6em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .day {
+      color: #fff;
+      font: 47px 'nexa_lightregular', sans-serif;
+    }
+  }
+  .views-field-title,  .views-field-body {
+    float: left;
+    width: 54%;
+  }
+  .views-field-body {
+    color: #4b7c95;
+    line-height: 1.7em;
+  }
+  .views-field-field-ticket-link {
+    float: right;
+    width: 25%;
+  }
+  .buy-link {
+    @include btn;
+    background-color: #000;
+    color: #fff;
+  }
+}
 /* ------------------------------------
  Footer
 -------------------------------------*/

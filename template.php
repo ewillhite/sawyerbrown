@@ -18,6 +18,15 @@ function sawyerbrown_preprocess_page(&$vars,$hook) {
 function sawyerbrown_process_html(&$vars) {
   $vars['head_scripts'] = drupal_get_js('head_scripts');
 }
+
+// Views Pre-Render Function
+function sawyerbrown_views_pre_render(&$view) {
+    if($view->name == 'bio') {
+      $path = drupal_get_path('theme', 'sawyerbrown');
+      drupal_add_css($path .'/assets/css/bio.css', array('group' => CSS_THEME));
+      drupal_add_js($path .'/assets/js/bio.js', array('group' => JS_THEME));
+    }
+}
 /*
 function sawyerbrown_preprocess_region(&$vars,$hook) {
   //  kpr($vars['content']);
