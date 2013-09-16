@@ -122,7 +122,7 @@ img, object, video {
 /* ------------------------------------
  Layout & General
 -------------------------------------*/
-#header-inner, #page-inner, #footer-inner {
+#header-inner, #page-inner, #post-inner, #footer-inner {
   @include outer-container;
   position: relative;
 }

@@ -61,6 +61,14 @@
   </div><!--page-inner-->
 </div><!-- /page-->
 
+<?php if ($page['post_content']): ?>
+  <div id="post-content">
+    <div id="post-inner">
+      <?php print render($page['post_content']); ?>
+    </div><!--post-inner-->
+  </div><!--post-content-->
+<?php endif; ?>
+
 <footer role="contentinfo">
   <div id="footer-inner">
     <?php print render($page['footer']); ?>
