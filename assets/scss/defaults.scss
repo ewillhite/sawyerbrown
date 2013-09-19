@@ -1,6 +1,7 @@
 $base: #333;
 $blue: #4b7c95;
 $gray:#666;
+$ltgray:#909090;
 
 @font-face {
   font-family: 'nexa_boldregular';
@@ -120,8 +121,11 @@ h5 {
   font-size: 1.1em;
 }
 a {
-  // color: $red;
+  color: $blue;
   text-decoration: none;
+  &:hover {
+    color:$ltgray;
+  }
 }
 .button {
   @include btn;

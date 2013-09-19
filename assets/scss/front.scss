@@ -63,7 +63,7 @@ header {
   border-radius: none;
   box-shadow: none;
 }
-h1 {
+h1, nav.tabs {
   display: none;
 }
 #main-content {
@@ -118,7 +118,7 @@ h1 {
     }
     li {
       clear: both;
-      margin: 0 0 10px;
+      margin: 0 0 5px;
       overflow: hidden;
     }
     .more-link {
@@ -139,6 +139,7 @@ h1 {
     & + div {
       h2 {
         color: #fff;
+        margin-bottom: 8px;
         &:before {
           color: #000;
           content: "b";
@@ -148,19 +149,76 @@ h1 {
           top: 3px;
         }
       }
+      li {
+        margin-bottom: 8px;
+      }
+    }
+  }
+  h3 {
+    margin-bottom: 0;
+  }
+}
+#main-content .events h2 {
+  margin-bottom: 10px;
+}
+.events {
+  left: -3px;
+  position: relative;
+  li {
+    background-color: #fff;
+    border-radius: 8px;
+    line-height:1.4em;
+    padding: 0 3%;
+    text-transform: uppercase;
+    > * {
+      clear: right;
+      float: right;
+    }
+    h3 {
+      font-size: 1.35em;
+      margin-top: 10px;
+    }
+    > span {
+      line-height:1em;
+      a {
+        color: $ltgray;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+    .views-field-field-time {
+      border-right: 2px solid;
+      clear: none;
+      margin-right: 5px;
+      padding-right: 5px;
     }
   }
 }
-.views-field-field-date-1 {
+.events .views-field-field-date-1 {
   background-color: #000;
-  float: left;
-  width: 23%;
-  padding: 10px;
   border-radius: 5px 0 0 6px;
+  float: left;
+  line-height: 1.6em;
+  padding: 10px;
+  margin-left: -3.4%;
+  text-transform: uppercase;
+  width: 23%;
   .field-content {
     background-color: #fff;
     border-radius: 8px;
-    padding: 5px;
+    padding: 4px 4px 0;
     text-align: center;
   }
+  .month {
+    font-size: 1em;
+  }
+  .day {
+    color: $ltgray;
+    font-size: 2em;
+  }
+}
+.location {
+  font-size: 1.4em;
+  margin-bottom: 2px;
 }

@@ -25,7 +25,7 @@ function sawyerbrown_views_pre_render(&$view) {
     if ($view->current_display == 'page') {
       $path = drupal_get_path('theme', 'sawyerbrown');
       drupal_add_css($path .'/assets/css/bio.css', array('group' => CSS_THEME));
-      drupal_add_js($path .'/assets/js/bio.js', array('group' => JS_THEME));
+      drupal_add_js($path .'/assets/js/bio-ck.js', array('group' => JS_THEME));
     }
   }
 }

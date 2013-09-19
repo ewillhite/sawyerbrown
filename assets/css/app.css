@@ -207,7 +207,10 @@ h5 {
   font-size: 1.1em; }
 
 a {
+  color: #4b7c95;
   text-decoration: none; }
+  a:hover {
+    color: #909090; }
 
 .button {
   background-color: #aaa;
