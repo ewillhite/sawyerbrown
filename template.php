@@ -35,6 +35,13 @@ function sawyerbrown_views_pre_render(&$view) {
     }
   }
 }
+
+// Hook Form Alter
+// function sawyerbrown_form_alter(&$form, &$form_state, $form_id) {
+//   if ($form_id == 'user_login_block') {
+//     dsm($form);
+//   }
+// }
 /*
 function sawyerbrown_preprocess_region(&$vars,$hook) {
   //  kpr($vars['content']);

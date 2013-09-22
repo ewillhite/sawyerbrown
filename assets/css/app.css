@@ -300,7 +300,51 @@ header, footer {
     position: relative; }
     header nav li, footer nav li {
       display: inline-block;
-      margin-left: 5px; }
+      margin-left: 5px;
+      position: relative; }
+      header nav li.active a, footer nav li.active a {
+        background-color: #fff;
+        color: #4b7c95; }
+      header nav li ul, footer nav li ul {
+        background-color: #000;
+        border-radius: 10px;
+        padding: 0;
+        position: absolute;
+        top: 39px;
+        left: -115px;
+        opacity: 0;
+        width: 325px;
+        visibility: hidden;
+        z-index: 100;
+        -webkit-transition: all 0.7s;
+        -moz-transition: all 0.7s;
+        transition: all 0.7s; }
+        header nav li ul.shown, footer nav li ul.shown {
+          opacity: 1;
+          top: 43px;
+          visibility: visible; }
+          header nav li ul.shown a, footer nav li ul.shown a {
+            background-color: transparent;
+            color: #fff; }
+            header nav li ul.shown a:hover, footer nav li ul.shown a:hover {
+              background-color: transparent;
+              color: #aac1cd; }
+        header nav li ul li, footer nav li ul li {
+          padding: 4px 0; }
+        header nav li ul:before, footer nav li ul:before {
+          content: "";
+          border: 10px solid #000;
+          border-top-color: transparent;
+          border-right-color: transparent;
+          border-left-color: transparent;
+          position: absolute;
+          top: -16px;
+          left: 149px; }
+      header nav li #fan-club + ul, footer nav li #fan-club + ul {
+        left: -132px;
+        width: 370px; }
+        header nav li #fan-club + ul:before, footer nav li #fan-club + ul:before {
+          left: 182px; }
     header nav a, footer nav a {
       border-radius: 7px;
       color: #fff;
@@ -376,7 +420,7 @@ header, footer {
   display: block;
   float: left;
   margin-right: 2.6087%;
-  width: 28.17391%;
+  width: 29.2%;
   height: 100%;
   margin-top: 40px; }
   #sidebar:last-child {
@@ -426,6 +470,12 @@ header, footer {
   padding: 3%;
   margin: 0 0 2% 2%; }
 
+.group_event_links > div {
+  float: left;
+  margin-left: 2%;
+  width: 49%; }
+  .group_event_links > div:first-child {
+    margin-left: 0; }
 .group_event_links .performance-event-timed-link, .group_event_links .meet-greet a {
   background-color: #aaa;
   color: #fff;
@@ -441,18 +491,15 @@ header, footer {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
   background-color: #000;
-  float: left;
   margin-bottom: 10px;
-  padding: 1% 3%;
-  width: 49%; }
+  padding: 1% 3%; }
   .group_event_links .performance-event-timed-link:hover, .group_event_links .meet-greet a:hover {
     background-color: #b6b6b6;
     text-decoration: none; }
   .group_event_links .performance-event-timed-link:hover, .group_event_links .meet-greet a:hover {
     background-color: #5f5f5f; }
 .group_event_links .meet-greet a {
-  background-color: #4b7c95;
-  margin-left: 2%; }
+  background-color: #4b7c95; }
   .group_event_links .meet-greet a:hover {
     background-color: #5f5f5f; }
 
@@ -466,6 +513,48 @@ header, footer {
 .node-meet_greet-form input[type="submit"]:first-child {
   float: right; }
 
+/* Meet & Greet Page */
+.pathone-meet-greet h1 {
+  background: none;
+  color: #4b7c95;
+  font-size: 1.7em;
+  text-transform: uppercase; }
+  .pathone-meet-greet h1:before {
+    color: #000;
+    content: "P";
+    font: .8em 'icomoon';
+    margin-right: 10px;
+    position: relative;
+    top: 1px; }
+
+/* ------------------------------------
+ Sidebar
+-------------------------------------*/
+.pathone-join #sidebar h2, .logged-in #sidebar h2 {
+  color: #fff;
+  font-size: 1.6em;
+  margin-bottom: 5px; }
+.pathone-join #sidebar > *:first-child, .logged-in #sidebar > *:first-child {
+  background-color: #4b7c95;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 5%; }
+  .pathone-join #sidebar > *:first-child label, .logged-in #sidebar > *:first-child label {
+    display: none; }
+  .pathone-join #sidebar > *:first-child ul, .logged-in #sidebar > *:first-child ul {
+    float: left;
+    list-style: none;
+    margin: 3% 9% 0 0;
+    padding: 0; }
+    .pathone-join #sidebar > *:first-child ul a, .logged-in #sidebar > *:first-child ul a {
+      color: #fff;
+      font-size: .9em; }
+  .pathone-join #sidebar > *:first-child input[type="submit"], .logged-in #sidebar > *:first-child input[type="submit"] {
+    background-color: #000; }
+    .pathone-join #sidebar > *:first-child input[type="submit"]:hover, .logged-in #sidebar > *:first-child input[type="submit"]:hover {
+      background-color: #2f2f2f; }
+
 /* ------------------------------------
  Footer
 -------------------------------------*/
@@ -478,6 +567,8 @@ footer {
     margin: 0; }
     footer nav ul {
       padding: 0; }
+      footer nav ul ul {
+        display: none; }
     footer nav li {
       display: block;
       margin: 0 0 0; }

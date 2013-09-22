@@ -39,6 +39,16 @@ header {
     header nav a {
       padding: 7px 13px;
       font-size: 1em; }
+    header nav li ul {
+      left: -100px;
+      width: 288px; }
+      header nav li ul:before {
+        left: 131px; }
+    header nav li #fan-club + ul {
+      left: -119px;
+      width: 320px; }
+      header nav li #fan-club + ul:before {
+        left: 157px; }
 
 #header-inner {
   padding-bottom: 50px; }
@@ -208,3 +218,75 @@ h1, nav.tabs {
 .location {
   font-size: 1.4em;
   margin-bottom: 2px; }
+
+#post-content {
+  background: url(../images/gray-bg2.png) repeat scroll 0 0;
+  height: 415px;
+  margin-top: -59px;
+  padding-top: 61px; }
+
+#post-inner {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1% 3%; }
+  #post-inner h2 {
+    color: #000;
+    font-size: 1.9em;
+    margin-bottom: 5px;
+    text-align: center; }
+    #post-inner h2:before {
+      color: #4b7c95;
+      content: "c";
+      font: 1.1em 'icomoon';
+      margin-right: 10px;
+      position: relative;
+      text-transform: lowercase;
+      top: 1px; }
+  #post-inner div > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    #post-inner div > ul li {
+      background-color: #eee;
+      float: left;
+      width: 48%; }
+      #post-inner div > ul li:first-child {
+        margin-right: 4%; }
+      #post-inner div > ul li div:first-child {
+        float: left;
+        margin-right: 2%; }
+        #post-inner div > ul li div:first-child img {
+          display: block; }
+    #post-inner div > ul h3, #post-inner div > ul .price {
+      font-size: 1.5em;
+      margin: 10px 0 5px; }
+    #post-inner div > ul p {
+      font: 1.5em 'nexa_lightregular', sans-serif;
+      margin: 0;
+      text-transform: uppercase; }
+    #post-inner div > ul .views-field-view-node {
+      float: left;
+      margin: 2% 20% 0 0;
+      width: 28%; }
+      #post-inner div > ul .views-field-view-node a {
+        background-color: #aaa;
+        color: #fff;
+        display: block;
+        font-family: 'nexa_boldregular', sans-serif;
+        font-weight: 800;
+        padding: 0.1% 1.5%;
+        border-radius: 5px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: .9em;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+        background-color: #4b7c95;
+        border-radius: 10px;
+        font: 1.4em 'nexa_lightregular', sans-serif;
+        padding: 7px;
+        text-transform: uppercase; }
+        #post-inner div > ul .views-field-view-node a:hover {
+          background-color: #b6b6b6;
+          text-decoration: none; }
