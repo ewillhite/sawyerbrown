@@ -18,7 +18,7 @@
   </div><!--header-inner-->
 </header>
 
-<div id="page">
+<div id="page" <?php if ($page['sidebar']): ?>class="with-sidebar"<?php endif; ?>>
   <div id="page-inner">
     <?php if (!$is_front): ?><div id="main-wrap"><?php endif; ?>
       <?php print render($title_prefix); ?>

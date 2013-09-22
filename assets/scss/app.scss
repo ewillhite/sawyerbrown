@@ -104,6 +104,7 @@ textarea {
 /* responsive images, videos */
 img, object, video {
   height: auto;
+  max-width: 100%;
 }
 /* Overrides for Media module to make fitVids work */
 .media-youtube-outer-wrapper, .media-youtube-preview-wrapper, .media-vimeo-outer-wrapper, .media-vimeo-preview-wrapper {
@@ -270,23 +271,33 @@ header, footer {
  Content
 -------------------------------------*/
 #page-inner {
-  background: url(../images/side-bg.png) repeat-y scroll 0 0;
   padding-bottom: 60px;
+  &.with-sidebar {
+    background: url(../images/side-bg.png) repeat-y scroll 0 0;
+  }
 }
 #main-content {
   padding:2%;
 }
 #main-wrap {
-  @include span-columns(6.7);
   background-color:#fff;
   border-radius: 10px;
   box-shadow: 3px 3px 7px #aaa;
   margin-top: 40px;
 }
+.with-sidebar #main-wrap {
+  @include span-columns(6.7);
+}
 #sidebar {
   @include span-columns(3.1);
   height: 100%;
   margin-top: 40px;
+}
+.no-background #main-wrap {
+  background-color:transparent;
+  border-radius:0;
+  box-shadow:none;
+  margin-top: 0;
 }
 
 /* News */
@@ -366,6 +377,237 @@ header, footer {
       background-color:#5f5f5f;
     }
   }
+}
+
+/* Media Page */
+.pathone-media #main-content {
+  #block-views-albums-tracks-block-1, #block-views-videos-block-1, #block-views-photo-galleries-block {
+    background-color: $blue;
+    border-radius:10px;
+    color: #fff;
+    float: left;
+    padding: 1.5%;
+    margin-right: 1%;
+    width:32%;
+    h2 {
+      color: #000;
+      margin-bottom: 10px;
+      &:before {
+        color: #fff;
+        content: "T";
+        font: 1em 'icomoon';
+        margin-right: 10px;
+        position: relative;
+        top: 1px;
+      }
+    }
+    .view-content ul {
+      list-style: none;
+      margin: 0;
+      padding:0;
+      li {
+        margin-bottom: 20px;
+        position: relative;
+      }
+    }
+    img {
+      display: block;
+    }
+    .views-field-title a, .views-field-name a {
+      background-color: #2d4a59;
+      display: block;
+      padding:5%;
+    }
+    h3, h3 a {
+      color: #fff;
+      font-size: .9em;
+      margin: 0;
+      text-align: center;
+    }
+    .item-list-pager {
+      height: 35px;
+      position: relative;
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        position: absolute;
+        left: 0;
+        top:0;
+        &.current {
+          display: none;
+        }
+        &.next {
+          left:auto;
+          right: 0;
+        }
+      }
+      a {
+        color: #000;
+        display: block;
+        padding-right: 27px;
+        position: relative;
+        text-transform: uppercase;
+        &:after {
+          content: "";
+          border: 12px solid #fff;
+          border-right: 8px solid transparent;
+          border-top: 8px solid transparent;
+          border-bottom: 8px solid transparent;
+          display: block;
+          position: absolute;
+          right:0;
+          top:6px;
+        }
+        &:hover {
+          color: #fff;
+        }
+      }
+      .previous a {
+        padding-left:27px;
+        &:after {
+          border: 12px solid #fff;
+          border-left: 8px solid transparent;
+          border-top: 8px solid transparent;
+          border-bottom: 8px solid transparent;
+          left: 0;
+          right: auto;
+        }
+      }
+    }
+  }
+  #block-views-videos-block-1 {
+    li > div:first-child {
+      background-color:#6f96aa;
+      padding-bottom: 50px;
+    }
+    .views-field-title a {
+      background-color: transparent;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding-top: 266px;
+    }
+  }
+}
+#main-content #block-views-videos-block-1 {
+  h2:before {
+    content: "v";
+    font-size: 1.3em;
+    text-transform: lowercase;
+    top:4px;
+  }
+}
+#main-content #block-views-photo-galleries-block {
+  margin: 0;
+  h2:before {
+    content: "p";
+    font-size: 1.1em;
+    text-transform: lowercase;
+    top:4px;
+  }
+  .views-field-name {
+    background-color:#3c6377;
+  }
+}
+
+/* Albums */
+.pathone-music {
+  #main-wrap {
+    background-color:$blue;
+  }
+  h1 {
+    color: #fff;
+    float: right;
+    width: 55%;
+  }
+}
+.node-album {
+  .content {
+    font-size: 1.1em;
+    position: relative;
+    > div {
+      float: left;
+    }
+  }
+  p {
+    background-color: #aac1cd;
+    float: left;
+    margin: 0 !important;
+    padding: 2% 20% 2% 3%;
+    width: 54%;
+  }
+  ol {
+    clear: both;
+    list-style: none;
+    margin: 0;
+    padding:2% 0;
+    li {
+      margin: 1% 0;
+    }
+  }
+  .buy-link {
+    @include btn;
+    background-color:$blue;
+    color: #000;
+    position: absolute;
+    top: 83px;
+    right: 33px;
+  }
+}
+.node-mp3-track {
+  clear: both;
+  h2 {
+    float: left;
+    margin-bottom: 10px;
+    a {
+      color: #000;
+      cursor: default;
+      font-size: .8em;
+      text-transform: lowercase;
+    }
+  }
+  .content > div, .mejs-controls > div {
+    display: none;
+    &:first-child {
+      display: block;
+      float: right;
+      margin-right: 2%;
+    }
+  }
+  .lyrics {
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    font: 1.1em 'nexa_lightregular', sans-serif;
+    margin: 0 2%;
+    text-transform: uppercase;
+  }
+}
+.mejs-time {
+  display: none !important;
+}
+.mejs-container, .mejs-container .mejs-controls {
+  background:none;
+}
+.mejs-controls .mejs-pause button {
+  background-position: 1px -14px;
+}
+.mejs-controls .mejs-play button {
+  background: none;
+  color: #fff;
+  font: 2em "icomoon";
+  height: auto;
+  line-height: 1em;
+  width: auto;
+}
+.node-mp3-track p {
+  font-size: .8em !important;
+  margin-bottom: 10px;
+  padding: 3%;
+  width: 100%;
 }
 /* Meet & Greet Form */
 .meet-greets h2 {

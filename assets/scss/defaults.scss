@@ -94,13 +94,16 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 .5em;
 }
 h1 {
-  background: url(../images/h1-bg.jpg) no-repeat scroll left bottom #5e8599;
   border-radius:7px 7px 0 0;
-  color: #fff;
+  color: #000;
   font-size: 2em; /* 68px */
   line-height: 1.1471em;
   margin: 0 0 0.3824em;
   padding: 2%;
+  &.with-sidebar {
+    background: url(../images/h1-bg.jpg) no-repeat scroll left bottom #5e8599;
+    color: #fff;
+  }
 }
 h2 {
   font-size: 1.3em;

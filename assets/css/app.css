@@ -135,7 +135,8 @@ textarea {
 
 /* responsive images, videos */
 img, object, video {
-  height: auto; }
+  height: auto;
+  max-width: 100%; }
 
 /* Overrides for Media module to make fitVids work */
 .media-youtube-outer-wrapper, .media-youtube-preview-wrapper, .media-vimeo-outer-wrapper, .media-vimeo-preview-wrapper {
@@ -182,14 +183,16 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 .5em; }
 
 h1 {
-  background: url(../images/h1-bg.jpg) no-repeat scroll left bottom #5e8599;
   border-radius: 7px 7px 0 0;
-  color: #fff;
+  color: #000;
   font-size: 2em;
   /* 68px */
   line-height: 1.1471em;
   margin: 0 0 0.3824em;
   padding: 2%; }
+  h1.with-sidebar {
+    background: url(../images/h1-bg.jpg) no-repeat scroll left bottom #5e8599;
+    color: #fff; }
 
 h2 {
   font-size: 1.3em;
@@ -398,22 +401,25 @@ header, footer {
  Content
 -------------------------------------*/
 #page-inner {
-  background: url(../images/side-bg.png) repeat-y scroll 0 0;
   padding-bottom: 60px; }
+  #page-inner.with-sidebar {
+    background: url(../images/side-bg.png) repeat-y scroll 0 0; }
 
 #main-content {
   padding: 2%; }
 
 #main-wrap {
-  display: block;
-  float: left;
-  margin-right: 2.6087%;
-  width: 66.13913%;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 3px 3px 7px #aaa;
   margin-top: 40px; }
-  #main-wrap:last-child {
+
+.with-sidebar #main-wrap {
+  display: block;
+  float: left;
+  margin-right: 2.6087%;
+  width: 66.13913%; }
+  .with-sidebar #main-wrap:last-child {
     margin-right: 0; }
 
 #sidebar {
@@ -425,6 +431,12 @@ header, footer {
   margin-top: 40px; }
   #sidebar:last-child {
     margin-right: 0; }
+
+.no-background #main-wrap {
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  margin-top: 0; }
 
 /* News */
 .page-news h1 {
@@ -502,6 +514,208 @@ header, footer {
   background-color: #4b7c95; }
   .group_event_links .meet-greet a:hover {
     background-color: #5f5f5f; }
+
+/* Media Page */
+.pathone-media #main-content #block-views-albums-tracks-block-1, .pathone-media #main-content #block-views-videos-block-1, .pathone-media #main-content #block-views-photo-galleries-block {
+  background-color: #4b7c95;
+  border-radius: 10px;
+  color: #fff;
+  float: left;
+  padding: 1.5%;
+  margin-right: 1%;
+  width: 32%; }
+  .pathone-media #main-content #block-views-albums-tracks-block-1 h2, .pathone-media #main-content #block-views-videos-block-1 h2, .pathone-media #main-content #block-views-photo-galleries-block h2 {
+    color: #000;
+    margin-bottom: 10px; }
+    .pathone-media #main-content #block-views-albums-tracks-block-1 h2:before, .pathone-media #main-content #block-views-videos-block-1 h2:before, .pathone-media #main-content #block-views-photo-galleries-block h2:before {
+      color: #fff;
+      content: "T";
+      font: 1em 'icomoon';
+      margin-right: 10px;
+      position: relative;
+      top: 1px; }
+  .pathone-media #main-content #block-views-albums-tracks-block-1 .view-content ul, .pathone-media #main-content #block-views-videos-block-1 .view-content ul, .pathone-media #main-content #block-views-photo-galleries-block .view-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .pathone-media #main-content #block-views-albums-tracks-block-1 .view-content ul li, .pathone-media #main-content #block-views-videos-block-1 .view-content ul li, .pathone-media #main-content #block-views-photo-galleries-block .view-content ul li {
+      margin-bottom: 20px;
+      position: relative; }
+  .pathone-media #main-content #block-views-albums-tracks-block-1 img, .pathone-media #main-content #block-views-videos-block-1 img, .pathone-media #main-content #block-views-photo-galleries-block img {
+    display: block; }
+  .pathone-media #main-content #block-views-albums-tracks-block-1 .views-field-title a, .pathone-media #main-content #block-views-albums-tracks-block-1 .views-field-name a, .pathone-media #main-content #block-views-videos-block-1 .views-field-title a, .pathone-media #main-content #block-views-videos-block-1 .views-field-name a, .pathone-media #main-content #block-views-photo-galleries-block .views-field-title a, .pathone-media #main-content #block-views-photo-galleries-block .views-field-name a {
+    background-color: #2d4a59;
+    display: block;
+    padding: 5%; }
+  .pathone-media #main-content #block-views-albums-tracks-block-1 h3, .pathone-media #main-content #block-views-albums-tracks-block-1 h3 a, .pathone-media #main-content #block-views-videos-block-1 h3, .pathone-media #main-content #block-views-videos-block-1 h3 a, .pathone-media #main-content #block-views-photo-galleries-block h3, .pathone-media #main-content #block-views-photo-galleries-block h3 a {
+    color: #fff;
+    font-size: .9em;
+    margin: 0;
+    text-align: center; }
+  .pathone-media #main-content #block-views-albums-tracks-block-1 .item-list-pager, .pathone-media #main-content #block-views-videos-block-1 .item-list-pager, .pathone-media #main-content #block-views-photo-galleries-block .item-list-pager {
+    height: 35px;
+    position: relative; }
+    .pathone-media #main-content #block-views-albums-tracks-block-1 .item-list-pager ul, .pathone-media #main-content #block-views-videos-block-1 .item-list-pager ul, .pathone-media #main-content #block-views-photo-galleries-block .item-list-pager ul {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+    .pathone-media #main-content #block-views-albums-tracks-block-1 .item-list-pager li, .pathone-media #main-content #block-views-videos-block-1 .item-list-pager li, .pathone-media #main-content #block-views-photo-galleries-block .item-list-pager li {
+      position: absolute;
+      left: 0;
+      top: 0; }
+      .pathone-media #main-content #block-views-albums-tracks-block-1 .item-list-pager li.current, .pathone-media #main-content #block-views-videos-block-1 .item-list-pager li.current, .pathone-media #main-content #block-views-photo-galleries-block .item-list-pager li.current {
+        display: none; }
+      .pathone-media #main-content #block-views-albums-tracks-block-1 .item-list-pager li.next, .pathone-media #main-content #block-views-videos-block-1 .item-list-pager li.next, .pathone-media #main-content #block-views-photo-galleries-block .item-list-pager li.next {
+        left: auto;
+        right: 0; }
+    .pathone-media #main-content #block-views-albums-tracks-block-1 .item-list-pager a, .pathone-media #main-content #block-views-videos-block-1 .item-list-pager a, .pathone-media #main-content #block-views-photo-galleries-block .item-list-pager a {
+      color: #000;
+      display: block;
+      padding-right: 27px;
+      position: relative;
+      text-transform: uppercase; }
+      .pathone-media #main-content #block-views-albums-tracks-block-1 .item-list-pager a:after, .pathone-media #main-content #block-views-videos-block-1 .item-list-pager a:after, .pathone-media #main-content #block-views-photo-galleries-block .item-list-pager a:after {
+        content: "";
+        border: 12px solid #fff;
+        border-right: 8px solid transparent;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 6px; }
+      .pathone-media #main-content #block-views-albums-tracks-block-1 .item-list-pager a:hover, .pathone-media #main-content #block-views-videos-block-1 .item-list-pager a:hover, .pathone-media #main-content #block-views-photo-galleries-block .item-list-pager a:hover {
+        color: #fff; }
+    .pathone-media #main-content #block-views-albums-tracks-block-1 .item-list-pager .previous a, .pathone-media #main-content #block-views-videos-block-1 .item-list-pager .previous a, .pathone-media #main-content #block-views-photo-galleries-block .item-list-pager .previous a {
+      padding-left: 27px; }
+      .pathone-media #main-content #block-views-albums-tracks-block-1 .item-list-pager .previous a:after, .pathone-media #main-content #block-views-videos-block-1 .item-list-pager .previous a:after, .pathone-media #main-content #block-views-photo-galleries-block .item-list-pager .previous a:after {
+        border: 12px solid #fff;
+        border-left: 8px solid transparent;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        left: 0;
+        right: auto; }
+.pathone-media #main-content #block-views-videos-block-1 li > div:first-child {
+  background-color: #6f96aa;
+  padding-bottom: 50px; }
+.pathone-media #main-content #block-views-videos-block-1 .views-field-title a {
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 266px; }
+
+#main-content #block-views-videos-block-1 h2:before {
+  content: "v";
+  font-size: 1.3em;
+  text-transform: lowercase;
+  top: 4px; }
+
+#main-content #block-views-photo-galleries-block {
+  margin: 0; }
+  #main-content #block-views-photo-galleries-block h2:before {
+    content: "p";
+    font-size: 1.1em;
+    text-transform: lowercase;
+    top: 4px; }
+  #main-content #block-views-photo-galleries-block .views-field-name {
+    background-color: #3c6377; }
+
+/* Albums */
+.pathone-music #main-wrap {
+  background-color: #4b7c95; }
+.pathone-music h1 {
+  color: #fff;
+  float: right;
+  width: 55%; }
+
+.node-album .content {
+  font-size: 1.1em;
+  position: relative; }
+  .node-album .content > div {
+    float: left; }
+.node-album p {
+  background-color: #aac1cd;
+  float: left;
+  margin: 0 !important;
+  padding: 2% 20% 2% 3%;
+  width: 54%; }
+.node-album ol {
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 2% 0; }
+  .node-album ol li {
+    margin: 1% 0; }
+.node-album .buy-link {
+  background-color: #aaa;
+  color: #fff;
+  display: block;
+  font-family: 'nexa_boldregular', sans-serif;
+  font-weight: 800;
+  padding: 0.1% 1.5%;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: .9em;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: #4b7c95;
+  color: #000;
+  position: absolute;
+  top: 83px;
+  right: 33px; }
+  .node-album .buy-link:hover {
+    background-color: #b6b6b6;
+    text-decoration: none; }
+
+.node-mp3-track {
+  clear: both; }
+  .node-mp3-track h2 {
+    float: left;
+    margin-bottom: 10px; }
+    .node-mp3-track h2 a {
+      color: #000;
+      cursor: default;
+      font-size: .8em;
+      text-transform: lowercase; }
+  .node-mp3-track .content > div, .node-mp3-track .mejs-controls > div {
+    display: none; }
+    .node-mp3-track .content > div:first-child, .node-mp3-track .mejs-controls > div:first-child {
+      display: block;
+      float: right;
+      margin-right: 2%; }
+  .node-mp3-track .lyrics {
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    font: 1.1em 'nexa_lightregular', sans-serif;
+    margin: 0 2%;
+    text-transform: uppercase; }
+
+.mejs-time {
+  display: none !important; }
+
+.mejs-container, .mejs-container .mejs-controls {
+  background: none; }
+
+.mejs-controls .mejs-pause button {
+  background-position: 1px -14px; }
+
+.mejs-controls .mejs-play button {
+  background: none;
+  color: #fff;
+  font: 2em "icomoon";
+  height: auto;
+  line-height: 1em;
+  width: auto; }
+
+.node-mp3-track p {
+  font-size: .8em !important;
+  margin-bottom: 10px;
+  padding: 3%;
+  width: 100%; }
 
 /* Meet & Greet Form */
 .meet-greets h2 {
