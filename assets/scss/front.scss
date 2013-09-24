@@ -13,12 +13,62 @@ font-family: 'icomoon';
  Header
 -------------------------------------*/
 header {
-  background-position: 0 -62px;
+  background-position: 0 -49px;
+  @include desktop {
+    background-position: 0 -62px;
+  }
   nav {
-    margin: 5px 20px 0 0;
+    margin:0;
+    position: absolute;
+    top: 14%;
+    right: 11%;
+    @include desktop {
+      margin: 5px 20px 0 0;
+      position: static;
+    }
+    &:after {
+      color: #fff;
+      content: "m";
+      cursor: pointer;
+      font: 2.3em "icomoon";
+      @include desktop {
+        display: none;
+      }
+    }
     a {
       padding: 7px 13px;
       font-size: 1em;
+    }
+    > ul {
+      left: -100px;
+      opacity: 0;
+      position: absolute;
+      top: 41px;
+      visibility: hidden;
+      width: 288px;
+      @include desktop {
+        opacity: 1;
+        position: static;
+        visibility: visible;
+        width: auto;
+      }
+      &.shown {
+        opacity: 1;
+        visibility: visible;
+      }
+      &:before {
+        border:5px solid $blue;
+        border-top:5px solid transparent;
+        border-left:5px solid transparent;
+        border-right:5px solid transparent;
+        content: "";
+        position:absolute;
+        right: 10px;
+        top:0;
+        @include desktop {
+          display: none;
+        }
+      }
     }
     li {
       ul {
@@ -42,17 +92,29 @@ header {
   padding-bottom:50px;
   > div {
     background-position:0 0;
-    position: absolute;
     bottom: 7px;
+    display: none;
+    position: absolute;
     right: 0;
     top: auto;
+    @include desktop {
+      display: block;
+    }
   }
 }
 #logo {
-  background-position:0 0;
-  margin-top: 19px;
-  padding-top: 479px;
-  width: 339px;
+  background-size: 375px;
+  background-position: 0 -300px;
+  margin-top: 8px;
+  padding-top: 100px;
+  width: 166px;
+  @include desktop {
+    background-size:auto;
+    background-position:0 0;
+    margin-top: 19px;
+    padding-top: 479px;
+    width: 339px;
+  }
 }
 #band {
   background: url(../images/band.png) no-repeat scroll 0 0;
@@ -75,6 +137,7 @@ header {
 }
 #page-inner {
   background:url(../images/home-sprite.png) no-repeat scroll 0 0;
+  height: 377px;
   padding: 0;
   border-radius: none;
   box-shadow: none;
@@ -124,7 +187,7 @@ h1, nav.tabs {
           color: #6f6f6f;
         }
       }
-      .more-link {
+      .more-link, .view-footer {
         clear: both;
         display: block;
         float: left;
@@ -137,7 +200,7 @@ h1, nav.tabs {
       margin: 0 0 5px;
       overflow: hidden;
     }
-    .more-link {
+    .more-link, .view-footer {
       text-align: center;
       a {
         font-size: .8em;
@@ -167,6 +230,24 @@ h1, nav.tabs {
       }
       li {
         margin-bottom: 8px;
+      }
+    }
+  }
+  #block-views-tweets-block {
+    margin: 0;
+    padding: 1.6% 1%;
+    width: 300px;
+    h2 {
+      margin-left: 5px;
+      margin-bottom: 15px;
+      &:before {
+        content: "t";
+        background-color: #fff;
+        padding: 2%;
+        border-radius: 5px;
+        top: -2px;
+        margin: 0;
+        left: -10px;
       }
     }
   }
@@ -238,6 +319,42 @@ h1, nav.tabs {
   font-size: 1.4em;
   margin-bottom: 2px;
 }
+/* Twitter Block Specific */
+#block-views-tweets-block li {
+  background-color: #565656;
+  position: relative;
+  left: -7px;
+  width: 284px;
+  top: -3px;
+  padding: 2% 3% 0;
+  + li {
+    top: 0;
+    padding-bottom: 1%;
+  }
+}
+.views-field-created-time {
+  display: block;
+  font-size: .9em;
+  line-height: 1em;
+}
+.views-field-text {
+  color: #fff;
+  font-size: .9em;
+  line-height: 1.3em;
+}
+#main-content > div .view-footer p {
+  margin: 0;
+  position: relative;
+  top: -4px;
+}
+#main-content > div .view-footer a {
+  color: #fff;
+  font-size: .8em;
+}
+
+/* ----------------------------
+ Post Content - Merch Section
+------------------------------*/
 #post-content {
   background:url(../images/gray-bg2.png) repeat scroll 0 0;
   height: 415px;
@@ -304,5 +421,25 @@ h1, nav.tabs {
         text-transform: uppercase;
       }
     }
+  }
+}
+#block-views-memberships-block-1 .view-footer a {
+  color: #000;
+  display: block;
+  font-size: .9em;
+  overflow: hidden;
+  padding-top: 8px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  &:hover {
+    color: #aaa;
+  }
+  &:after {
+    content: "a";
+    font: 1em 'icomoon';
+    position: relative;
+    top: 2px;
+    text-transform: lowercase;
   }
 }

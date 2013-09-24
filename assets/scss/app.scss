@@ -38,7 +38,7 @@ ul.primary {
     a {
       border-radius: 3px 3px 0 0;
       font-size: .8em;
-      padding: 7px 7px 5px;
+      padding: 7px 7px 3px;
     }
   }
 }
@@ -125,6 +125,9 @@ img, object, video {
 .views-field-body p {
   margin-top: 0;
 }
+.views-exposed-widget.views-submit-button {
+  margin: 17px 0;
+}
 @include editorstyles;
 /* ------------------------------------
  Layout & General
@@ -133,6 +136,12 @@ img, object, video {
   @include outer-container;
   position: relative;
 }
+.oldie {
+  #header-inner, #page-inner, #post-inner, #footer-inner {
+    min-width: 1156px;
+  }
+}
+
 body {
   background: url(../images/blue-bg.jpg);
 }
@@ -235,6 +244,20 @@ header, footer {
   width: 268px;
 }
 #header-inner, #footer-inner {
+  #emma-block {
+    background: none;
+    bottom:12px;
+    width: 259px;
+    h2 {
+      display: none;
+    }
+    label {
+      display: none;
+    }
+    form div {
+      float: left;
+    }
+  }
     > div {
     background: url(../images/social-bg.png) no-repeat scroll 0 -11px;
     position: absolute;
@@ -259,6 +282,9 @@ header, footer {
       font: 19px 'icomoon';
       padding: 8px;
       text-decoration: none;
+      &:hover {
+        background-color: #eee;
+      }
     }
     input[type="text"] {
       margin-right: 7px;
@@ -508,21 +534,37 @@ header, footer {
     text-transform: lowercase;
     top:4px;
   }
-  .views-field-name {
+  .views-field-name a {
     background-color:#3c6377;
   }
 }
 
 /* Albums */
 .pathone-music {
+  nav.tabs {
+    position: absolute;
+    top: 9px;
+    left: 1%;
+  }
   #main-wrap {
     background-color:$blue;
   }
   h1 {
     color: #fff;
     float: right;
-    width: 55%;
+    margin: 22px 0 17px;
+    width: 53%;
   }
+}
+.pathone-music #sidebar #block-views-albums-tracks-disc-block ul {
+    margin:0;
+}
+#block-views-albums-tracks-disc-block {
+  overflow: hidden;
+}
+#sidebar #block-views-albums-tracks-disc-block li {
+    float: left;
+    margin: 0 6px;
 }
 .node-album {
   .content {
@@ -536,8 +578,8 @@ header, footer {
     background-color: #aac1cd;
     float: left;
     margin: 0 !important;
-    padding: 2% 20% 2% 3%;
-    width: 54%;
+    padding: 2% 15% 2% 3%;
+    width: 56%;
   }
   ol {
     clear: both;
@@ -552,9 +594,10 @@ header, footer {
     @include btn;
     background-color:$blue;
     color: #000;
-    position: absolute;
-    top: 83px;
-    right: 33px;
+    float: right;
+    position: relative;
+    top: -49px;
+    right: 20px;
   }
 }
 .node-mp3-track {
@@ -566,7 +609,7 @@ header, footer {
       color: #000;
       cursor: default;
       font-size: .8em;
-      text-transform: lowercase;
+      text-transform: capitalize;
     }
   }
   .content > div, .mejs-controls > div {
@@ -581,7 +624,7 @@ header, footer {
     color: #fff;
     cursor: pointer;
     float: right;
-    font: 1.1em 'nexa_lightregular', sans-serif;
+    font: 1.1em/1.7em 'nexa_lightregular', sans-serif;
     margin: 0 2%;
     text-transform: uppercase;
   }
@@ -609,6 +652,27 @@ header, footer {
   padding: 3%;
   width: 100%;
 }
+
+/* Photos Page */
+.page-photos, .page-videos {
+  #main-content {
+    padding-top:0;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      float: left;
+      margin: 0 2% 2%;
+      width: 29%;
+    }
+  }
+}
+.page-videos #main-content li {
+  width: 46%;
+}
+
 /* Meet & Greet Form */
 .meet-greets h2 {
   font-size: 1em;
@@ -640,16 +704,50 @@ header, footer {
     }
   }
 }
+
+/* Memberships Page */
+.pathone-memberships {
+  #main-content {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 3%;
+      overflow: hidden;
+      > div:first-child {
+        float: left;
+        margin-right: 2%;
+      }
+    }
+    .views-field-view-node a {
+      @include btn;
+      float: left;
+    }
+  }
+}
+
+/* Cart/Checkout */
+.page-cart, .page-checkout {
+  #main-content table {
+    width: 100%;
+    input[type="text"] {
+      background-color: #fff;
+      width: 50px;
+    }
+  }
+}
 /* ------------------------------------
  Sidebar
 -------------------------------------*/
-.pathone-join #sidebar, .logged-in #sidebar {
+#sidebar {
   h2 {
     color: #fff;
     font-size: 1.6em;
     margin-bottom: 5px;
   }
-  > *:first-child {
+  #block-system-user-menu, #block-views-albums-tracks-disc-block, #block-user-login {
     background-color: $blue;
     margin-bottom: 20px;
     width: 100%;
@@ -721,9 +819,6 @@ footer {
     float: right;
     position: static;
     width: auto;
-    input {
-      display: none; /* remove */
-    }
     li {
       margin: 0 8px 0 0;
     }
@@ -749,6 +844,26 @@ footer {
       &:hover {
         opacity: .8;
       }
+    }
+  }
+  #emma-block {
+    background-color: #000;
+    border-radius: 6px;
+    padding: 1%;
+    position: static;
+    width: 296px;
+    h2 {
+      color: #fff;
+      display: block;
+      font-size: 1.2em;
+      margin: 0;
+      text-align: center;
+      span {
+        color: $blue;
+      }
+    }
+    input[type="text"] {
+      width: 214px;
     }
   }
 }

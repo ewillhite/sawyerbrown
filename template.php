@@ -37,11 +37,14 @@ function sawyerbrown_views_pre_render(&$view) {
 }
 
 // Hook Form Alter
-// function sawyerbrown_form_alter(&$form, &$form_state, $form_id) {
-//   if ($form_id == 'user_login_block') {
-//     dsm($form);
-//   }
-// }
+function sawyerbrown_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'emma_block_subscribe_form') {
+    $form['email_address']['#title'] = t('your@email.com');
+    $form['submit']['#value'] = t('Join');
+    $form['#prefix'] = t('<div id="emma-block"><h2>JOIN THE MAILING LIST <span>NOW</span> FOR <span>ALL</span> THE UP TO DATE INFO ON SAWYER BROWN!</h2>');
+    $form['#suffix'] = t('</div>');
+  }
+}
 /*
 function sawyerbrown_preprocess_region(&$vars,$hook) {
   //  kpr($vars['content']);

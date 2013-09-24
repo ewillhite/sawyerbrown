@@ -58,7 +58,7 @@ ul.primary {
     ul.primary li a {
       border-radius: 3px 3px 0 0;
       font-size: .8em;
-      padding: 7px 7px 5px; }
+      padding: 7px 7px 3px; }
 
 /* Forms */
 form small, form .description {
@@ -153,6 +153,9 @@ img, object, video {
 .views-field-body p {
   margin-top: 0; }
 
+.views-exposed-widget.views-submit-button {
+  margin: 17px 0; }
+
 body {
   color: #333333;
   font-family: 'nexa_boldregular', sans-serif;
@@ -242,9 +245,10 @@ blockquote {
   font-style: italic;
   position: relative;
   padding: 20px 39px 21px 30px;
-  box-shadow: 2px 2px 3px #eeeeee;
+  box-shadow: 2px 3px 12px #eeeeee;
   margin: 10px;
-  border-radius: 7px; }
+  border-radius: 7px;
+  font-size: .9em; }
   blockquote p {
     display: inline; }
 
@@ -262,6 +266,9 @@ blockquote {
     display: table; }
   #header-inner:after, #page-inner:after, #post-inner:after, #footer-inner:after {
     clear: both; }
+
+.oldie #header-inner, .oldie #page-inner, .oldie #post-inner, .oldie #footer-inner {
+  min-width: 1156px; }
 
 body {
   background: url(../images/blue-bg.jpg); }
@@ -371,6 +378,16 @@ header, footer {
   position: relative;
   width: 268px; }
 
+#header-inner #emma-block, #footer-inner #emma-block {
+  background: none;
+  bottom: 12px;
+  width: 259px; }
+  #header-inner #emma-block h2, #footer-inner #emma-block h2 {
+    display: none; }
+  #header-inner #emma-block label, #footer-inner #emma-block label {
+    display: none; }
+  #header-inner #emma-block form div, #footer-inner #emma-block form div {
+    float: left; }
 #header-inner > div, #footer-inner > div {
   background: url(../images/social-bg.png) no-repeat scroll 0 -11px;
   position: absolute;
@@ -393,6 +410,8 @@ header, footer {
     font: 19px 'icomoon';
     padding: 8px;
     text-decoration: none; }
+    #header-inner > div a:hover, #footer-inner > div a:hover {
+      background-color: #eee; }
   #header-inner > div input[type="text"], #footer-inner > div input[type="text"] {
     margin-right: 7px;
     width: 185px; }
@@ -618,16 +637,31 @@ header, footer {
     font-size: 1.1em;
     text-transform: lowercase;
     top: 4px; }
-  #main-content #block-views-photo-galleries-block .views-field-name {
+  #main-content #block-views-photo-galleries-block .views-field-name a {
     background-color: #3c6377; }
 
 /* Albums */
+.pathone-music nav.tabs {
+  position: absolute;
+  top: 9px;
+  left: 1%; }
 .pathone-music #main-wrap {
   background-color: #4b7c95; }
 .pathone-music h1 {
   color: #fff;
   float: right;
-  width: 55%; }
+  margin: 22px 0 17px;
+  width: 53%; }
+
+.pathone-music #sidebar #block-views-albums-tracks-disc-block ul {
+  margin: 0; }
+
+#block-views-albums-tracks-disc-block {
+  overflow: hidden; }
+
+#sidebar #block-views-albums-tracks-disc-block li {
+  float: left;
+  margin: 0 6px; }
 
 .node-album .content {
   font-size: 1.1em;
@@ -638,8 +672,8 @@ header, footer {
   background-color: #aac1cd;
   float: left;
   margin: 0 !important;
-  padding: 2% 20% 2% 3%;
-  width: 54%; }
+  padding: 2% 15% 2% 3%;
+  width: 56%; }
 .node-album ol {
   clear: both;
   list-style: none;
@@ -663,9 +697,10 @@ header, footer {
   transition: all 0.3s;
   background-color: #4b7c95;
   color: #000;
-  position: absolute;
-  top: 83px;
-  right: 33px; }
+  float: right;
+  position: relative;
+  top: -49px;
+  right: 20px; }
   .node-album .buy-link:hover {
     background-color: #b6b6b6;
     text-decoration: none; }
@@ -679,7 +714,7 @@ header, footer {
       color: #000;
       cursor: default;
       font-size: .8em;
-      text-transform: lowercase; }
+      text-transform: capitalize; }
   .node-mp3-track .content > div, .node-mp3-track .mejs-controls > div {
     display: none; }
     .node-mp3-track .content > div:first-child, .node-mp3-track .mejs-controls > div:first-child {
@@ -690,7 +725,7 @@ header, footer {
     color: #fff;
     cursor: pointer;
     float: right;
-    font: 1.1em 'nexa_lightregular', sans-serif;
+    font: 1.1em/1.7em 'nexa_lightregular', sans-serif;
     margin: 0 2%;
     text-transform: uppercase; }
 
@@ -717,6 +752,21 @@ header, footer {
   padding: 3%;
   width: 100%; }
 
+/* Photos Page */
+.page-photos #main-content, .page-videos #main-content {
+  padding-top: 0; }
+  .page-photos #main-content ul, .page-videos #main-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .page-photos #main-content li, .page-videos #main-content li {
+    float: left;
+    margin: 0 2% 2%;
+    width: 29%; }
+
+.page-videos #main-content li {
+  width: 46%; }
+
 /* Meet & Greet Form */
 .meet-greets h2 {
   font-size: 1em; }
@@ -741,32 +791,69 @@ header, footer {
     position: relative;
     top: 1px; }
 
+/* Memberships Page */
+.pathone-memberships #main-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+.pathone-memberships #main-content li {
+  margin-bottom: 3%;
+  overflow: hidden; }
+  .pathone-memberships #main-content li > div:first-child {
+    float: left;
+    margin-right: 2%; }
+.pathone-memberships #main-content .views-field-view-node a {
+  background-color: #aaa;
+  color: #fff;
+  display: block;
+  font-family: 'nexa_boldregular', sans-serif;
+  font-weight: 800;
+  padding: 0.1% 1.5%;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: .9em;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  float: left; }
+  .pathone-memberships #main-content .views-field-view-node a:hover {
+    background-color: #b6b6b6;
+    text-decoration: none; }
+
+/* Cart/Checkout */
+.page-cart #main-content table, .page-checkout #main-content table {
+  width: 100%; }
+  .page-cart #main-content table input[type="text"], .page-checkout #main-content table input[type="text"] {
+    background-color: #fff;
+    width: 50px; }
+
 /* ------------------------------------
  Sidebar
 -------------------------------------*/
-.pathone-join #sidebar h2, .logged-in #sidebar h2 {
+#sidebar h2 {
   color: #fff;
   font-size: 1.6em;
   margin-bottom: 5px; }
-.pathone-join #sidebar > *:first-child, .logged-in #sidebar > *:first-child {
+#sidebar #block-system-user-menu, #sidebar #block-views-albums-tracks-disc-block, #sidebar #block-user-login {
   background-color: #4b7c95;
   margin-bottom: 20px;
   width: 100%;
   border-radius: 10px;
   padding: 5%; }
-  .pathone-join #sidebar > *:first-child label, .logged-in #sidebar > *:first-child label {
+  #sidebar #block-system-user-menu label, #sidebar #block-views-albums-tracks-disc-block label, #sidebar #block-user-login label {
     display: none; }
-  .pathone-join #sidebar > *:first-child ul, .logged-in #sidebar > *:first-child ul {
+  #sidebar #block-system-user-menu ul, #sidebar #block-views-albums-tracks-disc-block ul, #sidebar #block-user-login ul {
     float: left;
     list-style: none;
     margin: 3% 9% 0 0;
     padding: 0; }
-    .pathone-join #sidebar > *:first-child ul a, .logged-in #sidebar > *:first-child ul a {
+    #sidebar #block-system-user-menu ul a, #sidebar #block-views-albums-tracks-disc-block ul a, #sidebar #block-user-login ul a {
       color: #fff;
       font-size: .9em; }
-  .pathone-join #sidebar > *:first-child input[type="submit"], .logged-in #sidebar > *:first-child input[type="submit"] {
+  #sidebar #block-system-user-menu input[type="submit"], #sidebar #block-views-albums-tracks-disc-block input[type="submit"], #sidebar #block-user-login input[type="submit"] {
     background-color: #000; }
-    .pathone-join #sidebar > *:first-child input[type="submit"]:hover, .logged-in #sidebar > *:first-child input[type="submit"]:hover {
+    #sidebar #block-system-user-menu input[type="submit"]:hover, #sidebar #block-views-albums-tracks-disc-block input[type="submit"]:hover, #sidebar #block-user-login input[type="submit"]:hover {
       background-color: #2f2f2f; }
 
 /* ------------------------------------
@@ -806,9 +893,6 @@ footer {
     float: right;
     position: static;
     width: auto; }
-    #footer-inner > div input {
-      display: none;
-      /* remove */ }
     #footer-inner > div li {
       margin: 0 8px 0 0; }
     #footer-inner > div a {
@@ -834,6 +918,22 @@ footer {
       left: 1px; }
       #footer-inner p a:hover {
         opacity: .8; }
+  #footer-inner #emma-block {
+    background-color: #000;
+    border-radius: 6px;
+    padding: 1%;
+    position: static;
+    width: 296px; }
+    #footer-inner #emma-block h2 {
+      color: #fff;
+      display: block;
+      font-size: 1.2em;
+      margin: 0;
+      text-align: center; }
+      #footer-inner #emma-block h2 span {
+        color: #4b7c95; }
+    #footer-inner #emma-block input[type="text"] {
+      width: 214px; }
 
 #footer-logo {
   background-position: -349px 0;
